@@ -12,7 +12,6 @@ interface JwtPayload {
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     const options: StrategyOptions = {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken() as (
         req: Request,
       ) => string | null,
