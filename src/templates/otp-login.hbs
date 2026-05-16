@@ -1,0 +1,64 @@
+{{#> base-layout}}
+
+  <!-- Greeting -->
+  <p style="font-size:16px; color:#37474F; margin:0 0 24px; line-height:1.6;">
+    Hi <strong style="color:#1A237E;">{{userName}}</strong>,
+  </p>
+  <p style="font-size:15px; color:#546E7A; margin:0 0 32px; line-height:1.7;">
+    Use the one-time code below to complete your sign-in to SmartSpend.
+    This code is valid for <strong>{{expiresInMinutes}} minutes</strong> and can only be used once.
+  </p>
+
+  <!-- OTP Box -->
+  <div style="
+    background: linear-gradient(135deg, #E8EAF6 0%, #EDE7F6 100%);
+    border: 2px dashed #9FA8DA;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    margin: 0 0 32px;
+  ">
+    <p style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#7986CB; margin:0 0 12px;">
+      One-Time Password
+    </p>
+    <p style="
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: 14px;
+      color: #1A237E;
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+    ">{{otp}}</p>
+  </div>
+
+  <!-- Warning -->
+  <div style="
+    background:#FFF8E1;
+    border-left: 4px solid #FFD600;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 0 0 32px;
+  ">
+    <p style="font-size:13px; color:#795548; margin:0; line-height:1.6;">
+      ⚠️ <strong>Never share this code.</strong> SmartSpend will never ask for it via phone or chat.
+      If you didn't request this, please
+      <a href="{{appUrl}}/help" style="color:#1A237E; font-weight:600;">contact support</a>.
+    </p>
+  </div>
+
+  <!-- Sign-in button -->
+  <div style="text-align:center; margin-bottom:8px;">
+    <a href="{{appUrl}}/verify" style="
+      display: inline-block;
+      background: linear-gradient(135deg, #1A237E, #3949AB);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 15px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+    ">Enter Code &amp; Sign In →</a>
+  </div>
+
+{{/base-layout}}
