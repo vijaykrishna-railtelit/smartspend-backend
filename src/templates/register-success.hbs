@@ -1,0 +1,72 @@
+{{> email-header}}
+
+<h1>You're in, {{userName}}!</h1>
+
+<p>
+  Your SmartSpend account has been created successfully. 
+  You're all set to take control of your finances.
+</p>
+
+<div class="alert-success">
+  <p>✓ &nbsp;Account registered on <strong>{{registeredAt}}</strong> · Timezone set to <strong>{{timezone}}</strong></p>
+</div>
+
+<p>Here's a quick summary of your account:</p>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="margin: 4px 0 24px; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+  <tr style="background: #F8FAFC;">
+    <td style="padding: 12px 16px; font-size: 13px; color: #9CA3AF; width: 40%; border-bottom: 1px solid #F3F4F6; letter-spacing: 0.3px; text-transform: uppercase;">Name</td>
+    <td style="padding: 12px 16px; font-size: 14px; color: #111827; border-bottom: 1px solid #F3F4F6;"><strong>{{userName}}</strong></td>
+  </tr>
+  <tr>
+    <td style="padding: 12px 16px; font-size: 13px; color: #9CA3AF; width: 40%; border-bottom: 1px solid #F3F4F6; letter-spacing: 0.3px; text-transform: uppercase;">Email</td>
+    <td style="padding: 12px 16px; font-size: 14px; color: #111827; border-bottom: 1px solid #F3F4F6;">{{email}}</td>
+  </tr>
+  <tr style="background: #F8FAFC;">
+    <td style="padding: 12px 16px; font-size: 13px; color: #9CA3AF; width: 40%; letter-spacing: 0.3px; text-transform: uppercase;">Timezone</td>
+    <td style="padding: 12px 16px; font-size: 14px; color: #111827;">{{timezone}}</td>
+  </tr>
+</table>
+
+<p>Start tracking your expenses right away — tap the button below to log in:</p>
+
+<p style="margin: 28px 0;">
+  <a href="{{appUrl}}/login" class="btn">Log in to SmartSpend</a>
+</p>
+
+<hr class="divider" />
+
+<p>Here's what to do next:</p>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="margin: 4px 0 24px;">
+  <tr>
+    <td style="padding: 10px 0; border-bottom: 1px solid #F3F4F6; font-size:14px; color:#374151;">
+      <strong style="color:#1e2a78;">01 &nbsp;</strong> Add your first expense today — every rupee counts
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px 0; border-bottom: 1px solid #F3F4F6; font-size:14px; color:#374151;">
+      <strong style="color:#1e2a78;">02 &nbsp;</strong> Set up categories like Food, Transport, Bills
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px 0; font-size:14px; color:#374151;">
+      <strong style="color:#1e2a78;">03 &nbsp;</strong> Set a monthly budget and let SmartSpend alert you before you overspend
+    </td>
+  </tr>
+</table>
+
+<div class="alert-warn">
+  <p>⚠ &nbsp;If you did not create this account, please contact us immediately at <a href="{{appUrl}}/help" style="color:#92400E; font-weight:600;">support</a>.</p>
+</div>
+
+<p style="font-size:14px; color:#6B7280;">
+  Need help getting started? Reach us anytime at
+  <a href="{{appUrl}}/help" style="color:#1e2a78; text-decoration:none; font-weight:600;">support</a>.
+</p>
+
+<hr class="divider" />
+
+<p style="font-size:13px; color:#9CA3AF; margin:0;">The SmartSpend Team</p>
+
+{{> email-footer}}

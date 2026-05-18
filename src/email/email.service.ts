@@ -11,7 +11,6 @@ export class EmailService {
     private readonly mailer: MailerService,
     private readonly config: ConfigService,
   ) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     this.appUrl = this.config.get<string>(
       'APP_URL',
       'https://support.oracle.com',
@@ -104,6 +103,31 @@ export class EmailService {
         userName,
         unlockUrl,
         supportUrl: `${this.appUrl}/help`,
+      },
+    );
+  }
+
+  async sendRegisterSuccess(
+    to: string,
+    userName: string,
+    timezone: string,
+  ): Promise<void> {
+    await this.send(
+      to,
+      'register-success',
+      'Welcome to SmartSpend — Account Created',
+      {
+        userName,
+        email: to,
+        timezone,
+        registeredAt: new Date().toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        }),
+        appUrl: this.appUrl,
+        currentYear: new Date().getFullYear(),
+        unsubscribeUrl: `${this.appUrl}/unsubscribe`,
       },
     );
   }
